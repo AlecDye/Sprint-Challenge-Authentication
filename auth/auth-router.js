@@ -8,6 +8,7 @@ const secrets = require("../api/secrets.js");
 
 router.post("/register", (req, res) => {
   let user = req.body;
+  console.log("user", user);
   // Registration request needs both a "username" and "password"
   if (user.username && user.password) {
     // Encrypting password
@@ -17,7 +18,8 @@ router.post("/register", (req, res) => {
     // Sending request to auth database
     Users.add(user)
       .then((saved) => {
-        res.status(201).json(saved);
+        console.log("then", saved);
+        res.status(201).json({ saved, message: "User created successfully" });
       })
       .catch((error) =>
         res

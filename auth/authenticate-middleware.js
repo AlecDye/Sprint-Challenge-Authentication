@@ -13,6 +13,7 @@ module.exports = (req, res, next) => {
         res.status(401).json({ you: "Access Denied!" });
       } else {
         req.decodedToken = decodedToken;
+        console.log("decodedtoken", decodedToken);
         next();
       }
     });
