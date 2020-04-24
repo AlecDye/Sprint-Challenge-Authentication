@@ -3,6 +3,8 @@
   before granting access to the next middleware/route handler
 */
 
+// Implement the authenticate middleware inside /auth/authenticate-middleware.js.
+
 module.exports = (req, res, next) => {
-  res.status(401).json({ you: 'shall not pass!' });
+  res.status(401).json({ you: "shall not pass!" });
 };
